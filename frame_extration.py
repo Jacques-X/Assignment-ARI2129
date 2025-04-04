@@ -22,9 +22,6 @@ def extract_frames(video_path, output_dir, frame_rate=1):
     print(f"Total frames: {total_frames}")
     print(f"Duration: {duration:.2f} seconds")
     
-    # Calculate frame interval based on the specified frame rate
-    frame_interval = int(fps * frame_rate)
-    
     # Initialize frame counter
     count = 0
     frame_count = 0
@@ -38,7 +35,7 @@ def extract_frames(video_path, output_dir, frame_rate=1):
             break
         
         # Save frame at the specified interval
-        if count % frame_interval == 0:
+        if count % 1 == 0:
             frame_filename = os.path.join(output_dir, f"frame_{frame_count:04d}.jpg")
             cv2.imwrite(frame_filename, frame)
             print(f"Extracted: {frame_filename}")
