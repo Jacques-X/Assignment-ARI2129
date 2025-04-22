@@ -90,8 +90,7 @@ def draw_matches(img1, kp1, img2, kp2, matches, title, out_folder="output_matche
         os.makedirs(out_folder)
 
     #draw matches
-    matched_img = cv2.drawMatches(img1, kp1, img2, kp2, matches, None,
-                                  flags=cv2.DRAW_MATCHES_FLAGS_NOT_DRAW_SINGLE_POINTS)
+    matched_img = cv2.drawMatches(img1, kp1, img2, kp2, matches, None, flags=cv2.DRAW_MATCHES_FLAGS_NOT_DRAW_SINGLE_POINTS)
 
     plt.figure(figsize=(12, 6))
     plt.imshow(matched_img, cmap='gray')
